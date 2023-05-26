@@ -1,0 +1,38 @@
+@import "../settings/color";
+
+
+.header {
+  height: 70px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+  &__nav {
+    display: flex;
+  }
+}
+
+.nav {
+  &__element {
+    padding: 0 26px;
+    &:last-child {
+      padding: 0;
+    }
+  }
+  &__link {
+    color: $color-grey;
+    font-weight: 700;
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    padding: 28px 18px 22px;
+    border-bottom: 4px solid transparent;
+    letter-spacing: 0.1875rem;
+    &:hover {
+      color: $color-black;
+      border-color: $color-primary;
+    }
+  }
+}
