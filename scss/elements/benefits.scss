@@ -25,7 +25,7 @@
         content: "";
         width: 180px;
         height: 180px;
-        background-color: var(--accent-color);
+        background-color: $color-redish;
         display: block;
         border-radius: 40px;
         position: absolute;
@@ -48,7 +48,7 @@
         content: "";
         width: 320px;
         height: 320px;
-        background-color: var(--accent-color);
+        background-color: $color-primary;
         display: block;
         border-radius: 50%;
         position: absolute;
@@ -75,7 +75,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: var(--accent-color);
+      background-color: $color-green;
       border: none;
       margin-left: 60px;
       & img {
@@ -93,7 +93,7 @@
       content: "";
       width: 332px;
       height: 4px;
-      background-color: var(--accent-color);
+      background-color: $color-green;
       display: block;
       margin-top: 50px;
     }
