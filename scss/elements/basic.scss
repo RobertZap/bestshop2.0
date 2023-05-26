@@ -1,5 +1,6 @@
 @import "../settings/fonts";
 @import "../settings/color";
+@import "../settings/mixin";
 
 * {
   box-sizing: border-box;
@@ -21,8 +22,11 @@ h2 {
 .container {
   width: 1352px;
   margin: 0 auto;
+  @include notebook {
+    width: 100%;
+    padding: 0 15px;
+  }
 }
-
 
 .logo {
   font-family: $font-relaway;

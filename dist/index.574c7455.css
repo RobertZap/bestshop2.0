@@ -203,6 +203,13 @@ h2 {
   margin: 0 auto;
 }
 
+@media screen and (width <= 1352px) {
+  .container {
+    width: 100%;
+    padding: 0 15px;
+  }
+}
+
 .logo {
   color: #08a6e4;
   font-family: Raleway, sans-serif;
@@ -249,19 +256,15 @@ h2 {
   display: flex;
 }
 
-.header__nav {
-  display: flex;
-}
-
-.nav__element {
+.header .nav__element {
   padding: 0 26px;
 }
 
-.nav__element:last-child {
-  padding: 0;
+.header .nav__element:last-child {
+  padding-right: 0;
 }
 
-.nav__link {
+.header .nav__link {
   color: #a5a5a5;
   text-transform: uppercase;
   letter-spacing: .1875rem;
@@ -271,9 +274,84 @@ h2 {
   font-weight: 700;
 }
 
-.nav__link:hover {
+.header .nav__link:hover {
   color: #000;
   border-color: #08a6e4;
+}
+
+.header__nav {
+  display: flex;
+}
+
+@media (width <= 792px) {
+  .header__nav {
+    width: 100%;
+    background-color: #fff;
+    flex-direction: column;
+    padding-bottom: 20px;
+    display: none;
+    position: absolute;
+    top: 95px;
+    left: 0;
+  }
+
+  .header__nav .nav__element {
+    padding: 0;
+  }
+
+  .header__nav .nav__link {
+    padding: 14px 20px;
+    display: block;
+  }
+}
+
+.header .menu__btn {
+  opacity: 0;
+  display: none;
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+@media (width <= 792px) {
+  .header .menu__btn:checked ~ .header__nav {
+    display: flex;
+  }
+
+  .header .menu__btn:checked ~ .menu__toggle span:first-child {
+    transform: rotate(45deg)translate(2px, 5px);
+  }
+
+  .header .menu__btn:checked ~ .menu__toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .header .menu__btn:checked ~ .menu__toggle span:nth-child(3) {
+    transform: rotate(-45deg)translate(2px, -5px);
+  }
+}
+
+.header .menu__toggle {
+  display: none;
+}
+
+.header .menu__toggle span {
+  width: 20px;
+  height: 2px;
+  background-color: #08a6e4;
+  margin-bottom: 3px;
+  transition: all .3s ease-in-out;
+  display: block;
+}
+
+.header .menu__toggle span:last-child {
+  margin-bottom: 0;
+}
+
+@media (width <= 792px) {
+  .header .menu__toggle {
+    display: block;
+  }
 }
 
 .opening {
@@ -297,9 +375,28 @@ h2 {
   margin-bottom: 38px;
 }
 
+@media (width <= 792px) {
+  .opening__heading {
+    padding: 0 70px;
+  }
+}
+
 .opening__image {
   width: 100%;
   height: auto;
+}
+
+@media (width <= 792px) {
+  .opening__image {
+    width: 220%;
+    transform: translateX(-28%);
+  }
+
+  .opening__image .btn {
+    margin: 0 15px;
+    padding: 16px 0;
+    display: block;
+  }
 }
 
 .statistics {
