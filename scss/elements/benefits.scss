@@ -1,12 +1,15 @@
 @import "../settings/color";
 @import "../settings/fonts";
+@import "../settings/mixin";
 
 .benefits {
   padding: 100px 0;
   background-color: $color-light-grey;
+
   &__container {
     padding: 0 100px;
   }
+
   &__single {
     background-color: $color-white;
     border: 1px solid #E8E9ED;
@@ -15,12 +18,15 @@
     align-items: flex-end;
     margin-bottom: 37px;
     border-radius: 5px;
+
     &--notebook {
       --accent-color: $color-redish;
     }
+
     &--notebook .benefits__image {
       margin-right: 117px;
       margin-bottom: 38px;
+
       &::before {
         content: "";
         width: 180px;
@@ -33,6 +39,7 @@
         top: -40px;
         transform: rotate(45deg);
       }
+
       & img {
         width: 386px;
         height: auto;
@@ -40,10 +47,12 @@
         z-index: 2;
       }
     }
+
     &--phone {
       --accent-color: $color-primary;
       flex-direction: row-reverse;
       padding: 0 20px 0 70px;
+
       & .benefits__image::before {
         content: "";
         width: 320px;
@@ -55,65 +64,96 @@
         left: 0;
         top: -20px;
       }
+
       & .benefits__image img {
         width: 426px;
         height: auto;
       }
+
       & .benefits__text {
         margin: 70px 0;
       }
     }
+
     &--solo {
       max-width: 620px;
+
       & .benefits__text {
         max-width: none;
         margin: 70px 35px;
       }
-    }
-    &--image {
-      flex-grow: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: $color-green;
-      border: none;
-      margin-left: 60px;
-      & img {
-        width: 295px;
-        height: auto;
-        margin-top: 55px;
+
+      @include tablet {
+        & .benefits__text {
+          max-width: none;
+          margin: 70px 35px;
+        }
+      }
+
+      &--image {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $color-green;
+        border: none;
+        margin-left: 60px;
+        @include tablet {
+          margin-left: 0;
+          margin-top: -5px;
+        }
+
+        & img {
+          width: 295px;
+          height: auto;
+          margin-top: 55px;
+        }
       }
     }
-  }
-  &__text {
-    box-sizing: content-box;
-    max-width: 415px;
-    margin: 90px 36px;
-    &::after {
-      content: "";
-      width: 332px;
-      height: 4px;
-      background-color: $color-green;
-      display: block;
-      margin-top: 50px;
+
+    &__text {
+      box-sizing: content-box;
+      max-width: 415px;
+      margin: 90px 36px;
+      @include tablet {
+        margin: 0;
+        max-width: none;
+      }
+
+      &::after {
+        content: "";
+        width: 332px;
+        height: 4px;
+        background-color: $color-green;
+        display: block;
+        margin-top: 50px;
+        @include tablet {
+          display: none;
+        }
+      }
     }
-  }
-  &__description {
-    margin-top: 30px;
-    line-height: 1.375rem;
-  }
-  &__image {
-    position: relative;
-    & img {
+
+    &__description {
+      margin-top: 30px;
+      line-height: 1.375rem;
+    }
+
+    &__image {
       position: relative;
-      z-index: 2;
+
+      & img {
+        position: relative;
+        z-index: 2;
+      }
     }
-  }
-  &__double {
-    --accent-color: $color-green;
-    display: flex;
-    &>div {
-      margin-bottom: 0;
+
+    &__double {
+      --accent-color: $color-green;
+      display: flex;
+
+      & > div {
+        margin-bottom: 0;
+      }
     }
   }
 }

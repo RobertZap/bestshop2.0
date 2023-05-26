@@ -1,5 +1,6 @@
 @import "../settings/fonts";
 @import "../settings/color";
+@import "../settings/mixin";
 
 
 .statistics {
@@ -12,6 +13,11 @@
     margin: 100px auto 120px;
     display: flex;
     justify-content: space-between;
+    @include mobile {
+      margin: 35px auto 50px;
+      align-items: center;
+      flex-direction: column;
+    }
   }
   &__single {
     max-width: 160px;
@@ -21,6 +27,13 @@
     align-items: center;
     text-align: center;
     font-family: $font-relaway;
+    @include mobile {
+      margin: 35px auto 50px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
     &:nth-child(1) .statistics__circle {
       background-color: $color-redish;
     }
