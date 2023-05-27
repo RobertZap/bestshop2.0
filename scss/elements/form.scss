@@ -1,15 +1,23 @@
 @import "../settings/color";
+@import "../settings/mixin";
 
 .form {
   display: flex;
   flex-direction: column;
+
+  @include tablet {
+    margin-top: 20px;
+  }
+
   &__field {
     display: flex;
     flex-direction: column;
+
     &:first-of-type {
       margin-bottom: 42px;
     }
   }
+
   &__label {
     font-weight: bold;
     text-transform: uppercase;
@@ -18,15 +26,18 @@
     letter-spacing: 3px;
     font-size: 0.6875rem;
   }
+
   &__input {
     border: none;
     border-bottom: 1px solid $color-grey;
     background-color: transparent;
     line-height: 2.625rem;
   }
+
   &__consent {
     margin-top: 30px;
   }
+
   &__checkbox {
     display: block;
     position: relative;
@@ -34,20 +45,25 @@
     margin-bottom: 12px;
     cursor: pointer;
     font-size: 1.375rem;
-    & input {
+
+    input {
       position: absolute;
       opacity: 0;
       cursor: pointer;
       height: 0;
       width: 0;
-      &:checked ~ .checkbox {
-        background-image: url(../assets/Checkmark.svg);
-        background-position: center;
-        background-size: 50%;
-        background-repeat: no-repeat;
+
+      &:checked {
+        ~ .checkbox {
+          background-image: url(../assets/Checkmark.svg);
+          background-position: center;
+          background-size: 50%;
+          background-repeat: no-repeat;
+        }
       }
     }
-    & .checkbox {
+
+    .checkbox {
       position: absolute;
       top: 0;
       left: 0;
@@ -56,15 +72,17 @@
       background-color: $color-white;
       border: 1px solid $color-grey;
       border-radius: 4px;
-      & .consent__text {
-        margin: 0 10px;
-        font-size: 0.75rem;
-        color: $color-grey;
-        line-height: 17px;
-      }
+    }
+
+    .consent__text {
+      margin: 0 10px;
+      font-size: 0.75rem;
+      color: $color-grey;
+      line-height: 17px;
     }
   }
-  & .btn {
+
+  .btn {
     font-size: 0.8125rem;
     padding: 20px 97px;
     align-self: flex-end;
